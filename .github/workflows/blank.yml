@@ -22,6 +22,6 @@ jobs:
       - name: Push to GitLab
         run: |
           cd repo
-          git remote add gitlab https://github.com/kiyounggit/gitlab_test.git
-          git push gitlab --all
-          git push gitlab --tags
+          git remote add origin https://github.com/kiyounggit/gitlab_test.git
+          git push origin --all
+          git push origin --tags
