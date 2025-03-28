@@ -15,13 +15,13 @@ jobs:
 
       - name: Clone Bitbucket Repository
         run: |
-          git clone --mirror https://github.com/kiyounggit/mirror_test.git repo
+          git clone --mirror https://kiyounggit:${{secrets.MY_PASSWORD}}@github.com/kiyounggit/mirror_test.git repo
           cd repo
           git fetch --all
 
       - name: Push to GitLab
         run: |
           cd repo
-          git remote add origin https://github.com/kiyounggit/gitlab_test.git
-          git push origin --all
-          git push origin --tags
+          git remote add gitlab https://kiyounggit:${{secrets.MY_PASSWORD}}@github.com/kiyounggit/gitlab_test.git
+          git push gitlab --all
+          git push gitlab --tags
